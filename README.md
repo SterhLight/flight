@@ -1,1 +1,1 @@
-#укращение git, docker, fnsible
+#укращение git, docker, ansible
