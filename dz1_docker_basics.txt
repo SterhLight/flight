@@ -1,0 +1,20 @@
+###Запустите контейнер Grafana в фоновом режиме
+docker run -d --name=grafana grafana/grafana
+
+###Посмотрите сколько ресурсов системы использует контейнер Grafana
+docker stats
+
+###Сохраните лог запуска контейнера Grafana в файл log.txt
+docker logs grafana > log.txt
+#Можно немного конкретизировать запрос
+docker logs grafana | grep "start" -A 5 -B 5 > log.txt
+
+###Сохраните переменные окружения контейнера Grafana в файл
+docker exec -it grafana printenv > printenv.txt
+
+###Посмотрите список плагинов командой grafana-cli plugins list-remote
+docker exec grafana bash -c 'grafana-cli plugins list-remote'
+
+###Зайдите в контейнер и смените пароль администратора grafana-cli admin reset-admin-password
+docker exec -it grafana bash
+grafana-cli admin reset-admin-password newPass123
