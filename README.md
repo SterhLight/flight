@@ -1,1 +1,0 @@
-#укращение git, docker, ansible
